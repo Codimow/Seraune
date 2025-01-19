@@ -2,6 +2,11 @@ import React from 'react';
 import { ChevronRight } from 'lucide-react';
 
 export const CTA = () => {
+  const openCalendly = () => {
+    // Open Calendly in a new tab as a fallback if the widget doesn't work
+    window.open('https://calendly.com/codimo-dev', '_blank');
+  };
+
   return (
     <section className="py-24 relative overflow-hidden">
       <div className="absolute inset-0">
@@ -28,16 +33,19 @@ export const CTA = () => {
               Join the ranks of successful businesses that have elevated their digital presence with our expertise.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="group relative">
+              <button 
+                onClick={openCalendly}
+                className="group relative"
+              >
                 <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-fuchsia-600 rounded-lg blur group-hover:blur-md transition-all duration-300" />
                 <span className="relative flex items-center justify-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-lg group-hover:bg-slate-800/90 transition-colors text-lg">
-                  Start Your Journey <ChevronRight className="group-hover:translate-x-1 transition-transform" />
+                  Schedule a Call <ChevronRight className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </button>
               <button className="group relative">
                 <span className="absolute inset-0 bg-gradient-to-r from-slate-800 to-slate-700 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative block border border-purple-500 text-purple-400 px-8 py-4 rounded-lg group-hover:text-white transition-colors text-lg">
-                  Schedule a Call
+                  Learn More
                 </span>
               </button>
             </div>
